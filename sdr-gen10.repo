@@ -1,0 +1,5 @@
+[hp-sdr-gen10]
+name=hp-sdr-gen10
+baseurl=https://downloads.linux.hpe.com/SDR/repo/spp-gen10/redhat/8Server/x86_64/current/
+gpgcheck=0
+enabled=1

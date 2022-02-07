@@ -1,0 +1,11 @@
+[Unit]
+Description=Setup SUT
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/sut-setup.sh
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
