@@ -3,7 +3,7 @@ COPY ./sdr-gen10.repo /etc/yum.repos.d/sdr-gen10.repo
 COPY sut-setup.sh /usr/local/sbin/sut-setup.sh
 COPY sut-setup.service /etc/systemd/system/sut-setup.service
 RUN dnf --disablerepo=hp-sdr-gen10 update -y && \
-	dnf install -y kmod openssl unzip hp-ams && \
+	dnf install -y kmod openssl unzip hp-ams hp-health hponcfg ssacli storcli && \
 	dnf install --setopt=tsflags=noscripts -y sut && \
 	dnf clean all && \
         mkdir -p /var/tmp/sut/stagingdirectory && \
