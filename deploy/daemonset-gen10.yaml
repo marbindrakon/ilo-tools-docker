@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: hpe-tools
+  namespace: hpe-tools
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: hpe-tools
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hpe-tools
+    spec:
+      containers:
+      - image: quay.signal9.gg/aaustin/ilo-tools-gen10@sha256:318dfdee4db5e1897556b43e1334254e2853e69a1777ba21439cb21de10dfe38
+        imagePullPolicy: IfNotPresent
+        name: hpe-tools
+        securityContext:
+          privileged: true
+          runAsUser: 0
+      dnsPolicy: Default
+      hostNetwork: true
+      hostPID: false
+      nodeSelector:
+        signal9.gg/hpe-tools: ''
+      priorityClassName: system-node-critical
+      restartPolicy: Always
+      serviceAccountName: hpe-tools
+      tolerations:
+      - operator: Exists
+
