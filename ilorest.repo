@@ -1,0 +1,5 @@
+[hp-ilorest]
+name=hp-ilorest
+baseurl=https://downloads.linux.hpe.com/SDR/repo/ilorest/rhel/8/x86_64/current/
+gpgcheck=0
+enabled=1

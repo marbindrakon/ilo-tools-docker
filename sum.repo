@@ -1,0 +1,5 @@
+[hp-sum]
+name=hp-sum
+baseurl=https://downloads.linux.hpe.com/SDR/repo/sum/rhel/8/x86_64/current/
+gpgcheck=0
+enabled=1
